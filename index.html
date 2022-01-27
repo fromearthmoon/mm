@@ -5,12 +5,25 @@
       img { 
         width: 100%; 
       }
-      </style>
+    </style>
+
   </head>
-  <body bgcolor=#000002>
+  <body bgcolor=#000000>
   <img src="two.jpg" >
-  <audio controls autoplay loop>
-    <source src="two.mp3" type="audio/mp3">
+  <audio id = "audioPlayer" controls autoplay>
+  <source src = "two.mp3" type="audio/mp3">
   </audio>
+
+  <script>
+    var nextAudio = ["two.mp3", "street.mp3", "paulkim.mp3"];
+    var curAudio = 0;
+    var audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.onended = function(){
+        curAudio = curAudio+1;
+        if (curAudio>nextAudio.length-1) curAudio=0;
+        audioPlayer.src = nextAudio[curAudio]
+    }
+  </script>
+
   </body>
 </html>
