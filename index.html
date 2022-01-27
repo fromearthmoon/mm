@@ -21,7 +21,8 @@
     audioPlayer.onended = function(){
         curAudio = curAudio+1;
         if (curAudio>nextAudio.length-1) curAudio=0;
-        audioPlayer.src = nextAudio[curAudio]
+        audioPlayer.src = nextAudio[curAudio];
+        audioPlayer.play();
     }
   </script>
 
